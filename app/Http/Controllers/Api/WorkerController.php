@@ -72,7 +72,7 @@ class WorkerController extends Controller
     }
 
     public function profile()
-    {
+    { //profile api
       return response()->json([
           "status"=>1,
           "message"=>"worker profile information",
@@ -80,7 +80,12 @@ class WorkerController extends Controller
       ]);
     }
     public function logout()
-    {
+    {//logout api
+        auth()->user()->token()->delete();
 
+        return response()->json([
+            "status"=> 1,
+            "message"=>"worker logged out successfullys"
+        ]);
     }
 }
