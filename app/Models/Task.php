@@ -9,8 +9,6 @@ class Task extends Model
 {
     use HasFactory;
 
-    protected $table = "Workers";
-
     protected $fillable = ["worker_id", "name", "description", "duration"];
 
     public $timestamps = false;
